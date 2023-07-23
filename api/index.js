@@ -23,7 +23,7 @@ mongoose.connect(
   "mongodb+srv://blog-test:p0MGbYggLfMAk4W8@cluster0.boo57j8.mongodb.net/?retryWrites=true&w=majority"
 );
 
-app.post("/register", async (req, res) => {
+app.post("api/register", async (req, res) => {
   mongoose.connect(
     "mongodb+srv://blog-test:p0MGbYggLfMAk4W8@cluster0.boo57j8.mongodb.net/?retryWrites=true&w=majority"
   );
@@ -40,7 +40,7 @@ app.post("/register", async (req, res) => {
   }
 });
 
-app.post("/login", async (req, res) => {
+app.post("api/login", async (req, res) => {
   mongoose.connect(
     "mongodb+srv://blog-test:p0MGbYggLfMAk4W8@cluster0.boo57j8.mongodb.net/?retryWrites=true&w=majority"
   );
@@ -61,7 +61,7 @@ app.post("/login", async (req, res) => {
   }
 });
 
-app.get("/profile", (req, res) => {
+app.get("api/profile", (req, res) => {
   mongoose.connect(
     "mongodb+srv://blog-test:p0MGbYggLfMAk4W8@cluster0.boo57j8.mongodb.net/?retryWrites=true&w=majority"
   );
@@ -72,14 +72,14 @@ app.get("/profile", (req, res) => {
   });
 });
 
-app.post("/logout", (req, res) => {
+app.post("api/logout", (req, res) => {
   mongoose.connect(
     "mongodb+srv://blog-test:p0MGbYggLfMAk4W8@cluster0.boo57j8.mongodb.net/?retryWrites=true&w=majority"
   );
   res.cookie("token", "").json("ok");
 });
 
-app.post("/post", uploadMiddleware.single("file"), async (req, res) => {
+app.post("api/post", uploadMiddleware.single("file"), async (req, res) => {
   mongoose.connect(
     "mongodb+srv://blog-test:p0MGbYggLfMAk4W8@cluster0.boo57j8.mongodb.net/?retryWrites=true&w=majority"
   );
@@ -104,7 +104,7 @@ app.post("/post", uploadMiddleware.single("file"), async (req, res) => {
   });
 });
 
-app.put("/post", uploadMiddleware.single("file"), async (req, res) => {
+app.put("api/post", uploadMiddleware.single("file"), async (req, res) => {
   mongoose.connect(
     "mongodb+srv://blog-test:p0MGbYggLfMAk4W8@cluster0.boo57j8.mongodb.net/?retryWrites=true&w=majority"
   );
@@ -137,7 +137,7 @@ app.put("/post", uploadMiddleware.single("file"), async (req, res) => {
   });
 });
 
-app.get("/post", async (req, res) => {
+app.get("api/post", async (req, res) => {
   mongoose.connect(
     "mongodb+srv://blog-test:p0MGbYggLfMAk4W8@cluster0.boo57j8.mongodb.net/?retryWrites=true&w=majority"
   );
@@ -149,7 +149,7 @@ app.get("/post", async (req, res) => {
   );
 });
 
-app.get("/post/:id", async (req, res) => {
+app.get("api/post/:id", async (req, res) => {
   mongoose.connect(
     "mongodb+srv://blog-test:p0MGbYggLfMAk4W8@cluster0.boo57j8.mongodb.net/?retryWrites=true&w=majority"
   );
